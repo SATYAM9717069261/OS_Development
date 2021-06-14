@@ -1,0 +1,30 @@
+ Install Docker in Ubuntu
+1. sudo apt-get install docker.io
+2. sudo system status docker
+3. sudo syatem enable --now docker
+4. sudo docker run <image Name/ App name/ Container Name >
+5. sudo docker images
+
+ Information about Docker 
+1. Docker hub is like git hub
+
+ Commands on Docker
+1. Create a file Dockerfile with no Extention
+2. Add Instruction on it
+	2.1 FROM node:alpine [ for node you search in docker image where you get all names  ]
+	2.2 COPY * /app      [ inside app all the work is copy, if app dir is not present then it will generate app dir automatic ]
+	2.3 WORKDIR /app     [ specify where all work its optional if you can't specify then on next command is CMD node app/app.js] 
+	2.4 CMD node app.js  [app.js is file inside app which we want to run]
+
+3. Build Docker 
+	3.1 docker build -t <image name> <docker file which we create in previous step>
+
+4. use gcc Cross Plateform image=> randomdude/gcc-cross-x86_64-elf
+5. inside docker we use nasm for compile Assambly code
+6. use grub-px-bin for group build for final ISO file
+7. use xorriso for group pakage
+
+8. build Docker image [docker build buildenv -t myos-buildenv ] (buildenv is dir name where Docker file is placed ) it will take long time 
+9. run docker [sudo docker run --rm -it -v $pwd:/root/env myos-buildenv ] 
+10. now you are inside docker image(Container)
+
